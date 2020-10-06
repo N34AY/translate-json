@@ -1,42 +1,42 @@
 module.exports = {
-  header: {
-    links: {
-      search: 'Пошук',
-      basket: 'Кошик',
-      user: {
-        noauth: 'Ввійти',
-        auth: 'Профіль'
+  "header": {
+    "links": {
+      "search": "Пошук",
+      "basket": "Кошик",
+      "user": {
+        "noauth": "увійти Профіль",
+        "auth": "Новинки"
       }
     }
   },
-  blocks: {
-    new: 'Новинки',
-    stock: 'Акції',
-    hits: 'Хіти',
-    blog: 'Блог',
-    viewed: 'Ви дивилися',
-    similar: 'Рекомендуємо'
+  "blocks": {
+    "new": "Акції",
+    "stock": "Хіти",
+    "hits": "Блог",
+    "blog": "Ви дивилися",
+    "viewed": "Рекомендуємо",
+    "similar": "Інформація"
   },
-  footer: {
-    titles: {
-      info: 'Інформація',
-      user: 'Покупцям',
-      social: 'Ми в соцмережах',
-      contacts: 'Контакти'
+  "footer": {
+    "titles": {
+      "info": "Покупцям",
+      "user": "Ми в соцмережах",
+      "social": "Контакти",
+      "contacts": "Особистий кабінет"
     }
   },
-  user: {
-    links: {
-      cabinet: 'Особистий кабінет',
-      orders: 'Історія замовлень',
-      favorites: 'Вибране',
-      return: 'Повернення'
+  "user": {
+    "links": {
+      "cabinet": "Історія замовлень",
+      "orders": "Вибране",
+      "favorites": "Повернення",
+      "return": "У мене є промокод"
     }
   },
-  placingOrder: {
-    promocode: {
-      title: 'У мене є промокод',
-      button: 'Отримати'
+  "placingOrder": {
+    "promocode": {
+      "title": "Отримати",
+      "button": ""
     }
   }
 }

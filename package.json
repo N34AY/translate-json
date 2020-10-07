@@ -1,13 +1,13 @@
 {
-  "name": "json-translator",
+  "name": "i18n-translator",
   "version": "1.0.0",
-  "description": "transtale json",
+  "description": "Translates i18n files using google translate API",
   "main": "script.js",
   "scripts": {
-    "start": "node script.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "N34AY",
   "license": "ISC",
   "dependencies": {
     "@google-cloud/translate": "^6.0.3"

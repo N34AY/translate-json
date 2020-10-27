@@ -16,17 +16,17 @@ exports.Translate = (objectPath, targets) => {
                 if(typeof(o[prop]) === 'object') {
                     getProp(o[prop])
                 } else {
-                    stringToTranslate += o[prop] + ','
+                    stringToTranslate += o[prop] + ';'
                 }
             }
         }
     }
     getObjValue(object)
-
+    console.log(stringToTranslate);
     function createNewObj(translations, target) {
         for (let i = 0; i < translations.length; i++) { translations[i] = translations[i].trim() }
         let TranslatedObj = replaceObjValue(object, translations)
-        let TranslatedJSON = 'module.exports = ' + JSON.stringify(TranslatedObj, null, 2)
+        let TranslatedJSON = 'export default ' + JSON.stringify(TranslatedObj, null, 2)
         fs.writeFileSync('./transResult/' + target + "-" + target.toUpperCase() + ".js", TranslatedJSON)
     }
     
@@ -52,7 +52,8 @@ function replaceObjValue(object, translations) {
         try {
             if (!fs.existsSync('./transResult')) fs.mkdirSync('./transResult') 
             let [translations] = await translate.translate(stringToTranslate, target)
-            translations = Array.isArray(translations) ? translations : translations.split(',')
+            translations = Array.isArray(translations) ? translations : translations.split(';')
+            console.log(translations);
             createNewObj(translations, target)
         } catch (error) {
             console.log(error)

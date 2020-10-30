@@ -16,7 +16,7 @@ exports.Translate = (objectPath, targets) => {
                 if(typeof(o[prop]) === 'object') {
                     getProp(o[prop])
                 } else {
-                    stringToTranslate += o[prop] + ';'
+                    stringToTranslate += o[prop] + '$'
                 }
             }
         }
@@ -52,7 +52,7 @@ function replaceObjValue(object, translations) {
         try {
             if (!fs.existsSync('./transResult')) fs.mkdirSync('./transResult') 
             let [translations] = await translate.translate(stringToTranslate, target)
-            translations = Array.isArray(translations) ? translations : translations.split(';')
+            translations = Array.isArray(translations) ? translations : translations.split('$')
             console.log(translations);
             createNewObj(translations, target)
         } catch (error) {
